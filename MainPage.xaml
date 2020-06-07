@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="720" Width="1280">
-        <GridView x:Name="_gridview"  Margin="10,10,10,360"  >
+        <GridView x:Name="_gridview"  Margin="10,10,10,343" BorderThickness="2,2,2,2" BorderBrush="Black"  >
             <GridView.ItemTemplate  >
                 <DataTemplate  >
                     <StackPanel Orientation="Vertical" Width="300" Padding="5,5">
@@ -35,7 +35,7 @@
 
             </GridView.ItemTemplate>
         </GridView>
-        <Button x:Name="Refresh" Content="Refresh" Margin="13,509,0,0" VerticalAlignment="Top" Click="Refresh_Click"/>
+        <Button x:Name="btn_Refresh" Content="Refresh" Margin="13,509,0,0" VerticalAlignment="Top" Click="Refresh_Click"/>
         <TextBlock x:Name="Time" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,509,0,0" Width="242" Height="31"/>
         <TextBlock x:Name="StatusUpdate" Text="{Binding last_update}" Margin="110,539,898,150"/>
         <ToggleSwitch x:Name="AutoUpdateToggle" Header="Auto-update" Margin="466,510,0,0" VerticalAlignment="Top" IsOn="True" Toggled="AutoUpdateToggle_Toggled"/>
@@ -48,8 +48,8 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <TextBox x:Name="textBox_CountryField"  PlaceholderText="Enter country" TextWrapping="Wrap" Margin="571,408,571,278"/>
-        <Button x:Name="btn_CountryAdd" Content="Add" Margin="571,452,0,0" VerticalAlignment="Top" Width="131" Click="btn_CountryAdd_Click"/>
+        <TextBox x:Name="textBox_CountryField"  PlaceholderText="Enter country" TextWrapping="Wrap" Margin="571,408,528,278"/>
+        <Button x:Name="btn_CountryAdd" Content="Add" Margin="757,409,0,0" VerticalAlignment="Top" Width="131" Click="btn_CountryAdd_Click"/>
     </Grid>
 
 

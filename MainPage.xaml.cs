@@ -231,7 +231,7 @@ namespace Ron_WeatherApp
         private void SetTimer()
         {
             Timer1 = new Windows.UI.Xaml.DispatcherTimer();
-            Timer1.Interval = TimeSpan.FromMilliseconds(10000);
+            Timer1.Interval = TimeSpan.FromMilliseconds(60000);
             Timer1.Tick += Timer1_Tick;
             Timer1.Start();
         }
@@ -336,6 +336,8 @@ namespace Ron_WeatherApp
             String input = textBox_CountryField.Text;         
             CountrySelection_Writer(input);
             fetchWeatherData();
+            textBox_CountryField.Text = "";
         }
+
     }
 }
