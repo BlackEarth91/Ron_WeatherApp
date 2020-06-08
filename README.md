@@ -38,7 +38,6 @@ If dependencies are required, add NuGet package for Newtonsoft.Json [Installing 
 1. Click on refresh to fetch the added country into the grid
 
 
-
 # Roadmap
 - [x] For each city display the current, low, and high temperatures, the humidity, and sunrise/sunset times
 - [x]	The app has a refresh button that allows the weather to be updated
@@ -49,3 +48,5 @@ If dependencies are required, add NuGet package for Newtonsoft.Json [Installing 
 # Built With
 - Universal Windows Platform
 - Package: Newtonsoft.Json
+
+![](WeatherApp_Demo.gif)
