@@ -11,7 +11,7 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="720" Width="1280">
         <GridView x:Name="_gridview"  Margin="10,10,10,343" BorderThickness="2,2,2,2" BorderBrush="Black"  >
             <GridView.ItemTemplate  >
-                <DataTemplate  >
+                <DataTemplate>
                     <StackPanel Orientation="Vertical" Width="300" Padding="5,5">
                         <TextBlock Text="{Binding name}" FontSize="36" FontWeight="Bold"/>
                         <Image x:Name ="WeatherImage" Source="{Binding icon}" Stretch="Fill" Width="100" Height="100"/>
@@ -28,7 +28,7 @@
                             <TextBlock Text="{Binding sunrise}" />
                             <TextBlock Text="Sunset" TextDecorations="Underline" />
                             <TextBlock Text="{Binding sunset}" />
-
+                            
                         </StackPanel>
                     </StackPanel>
                 </DataTemplate>

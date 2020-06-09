@@ -43,7 +43,7 @@ namespace Ron_WeatherApp
         private ObservableCollection<Countries> compiledCountries = new ObservableCollection<Countries>();
         DispatcherTimer Timer = new DispatcherTimer();
         ToggleSwitch toggleSwitch = new ToggleSwitch();
-        private Windows.UI.Xaml.DispatcherTimer Timer1;
+        private DispatcherTimer Timer1;
         public string LiveTime => DateTime.Now.ToString("dd MMM yyyy HH:mm:ss");
         String apiKey = "63fc070c3b0747159a1d4d9564106c90";
 
@@ -52,7 +52,6 @@ namespace Ron_WeatherApp
             this.InitializeComponent();
             Init_App();
             Thread.Sleep(200); //Wait for Init_App to create Country Selection list
-            SetTimer();
             startTime();
             fetchWeatherData();
             updateGrid();
@@ -230,10 +229,11 @@ namespace Ron_WeatherApp
         /// </summary>
         private void SetTimer()
         {
-            Timer1 = new Windows.UI.Xaml.DispatcherTimer();
-            Timer1.Interval = TimeSpan.FromMilliseconds(60000);
+
+            Timer1 = new DispatcherTimer();
+            Timer1.Interval = TimeSpan.FromMilliseconds(10000);
             Timer1.Tick += Timer1_Tick;
-            Timer1.Start();
+            
         }
         /// <summary>
         /// This function triggers the fetch weather function and updates the grid control after 60 seconds interval reached
@@ -325,10 +325,20 @@ namespace Ron_WeatherApp
         {
             fetchWeatherData();
             updateGrid(); 
-        }   
+        }
+        
         private void AutoUpdateToggle_Toggled(object sender, RoutedEventArgs e)
-        {            
-            toggleSwitch = sender as ToggleSwitch;                  
+        {                     
+            toggleSwitch = sender as ToggleSwitch;
+                if (toggleSwitch.IsOn == true)
+                {
+                     SetTimer();
+                     Timer1.Start();
+                }
+                else
+                {
+                    Timer1.Stop();
+                }           
         }
 
         private void btn_CountryAdd_Click(object sender, RoutedEventArgs e)
