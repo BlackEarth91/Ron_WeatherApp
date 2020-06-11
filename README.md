@@ -31,12 +31,17 @@ If dependencies are required, add NuGet package for Newtonsoft.Json [Installing 
 1. Enable Developer Mode under Windows Settings > Update & Security > For Developers > Enable Developer Mode (Yes if prompted)
 ```
 
-# Usage
+# Usage/Troubleshooting
 **If gridview is empty or country list is not updated, please click on refresh to retrieve the API and update the control**
 1. Enter country to add in the text field
 1. Click on add country, if country exists, a message box will be prompted
 1. Click on refresh to fetch the added country into the grid
 
+**If app crashes on launch**
+1. Look for 'Package.appxmanifest' in the project > Packaging > Package Name
+1. Navigate to '%USERPROFILE%\AppData\Local\Packages\{Package Name}'
+1. Delete both CountrySel.json and data.json
+1. Rebuild and run the application
 
 # Roadmap
 - [x] For each city display the current, low, and high temperatures, the humidity, and sunrise/sunset times
